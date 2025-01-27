@@ -36,9 +36,9 @@ endif::[]
 
 toc::[]
 
-== OAuth 2.0
+== OAuth 2.0 et OpenID Connect (OIDC)
 
-=== Protocole ou framework ?
+=== OAuth 2.0 : protocole ou framework ?
 
 -> *OAuth 2.0 est-il un framework ou un protocole ? Explique la différence entre les 2*
 
@@ -85,5 +85,30 @@ IMPORTANT: -> En conclusion, OAuth 2.0 est un *protocole qui établit les règle
 
 image:20250127_ByteByteGo_OAuth-2.0_01.jpg[]
 
+=== Différences entre OAuth 2.0 et OIDC
 
+.Attention aux éléments de langage empruntés à OIDC et qui complique la compréhension...
+[NOTE]
+====
+Dans le schéma précédent, on parle d'"IdP" (Identity Provider) pour le serveur validant les credentials de l'utilisateur. +
+Il serait plus correct de parler d'AS (Authorization Server) pour ce serveur étant donné que OAuth est un protocole de délégation d'autorisation et pas d'identification. +
+-> C'est OIDC (OpenID Connect) qui va apporter la surcouche liée à l'authentification (et NON l'autorisation) des utilisateurs.
+
+Pour rappel, *OpenID Connect* (OIDC) étend OAuth pour fournir un *protocole d'authentification*.
+====
+
+*OAuth 2.0* :
+
+	* *Focus sur l'autorisation* : Le protocole OAuth 2.0 se concentre principalement sur la délégation d'autorisation. Il permet à une application cliente (par exemple, une application mobile) d'obtenir un accès limité aux ressources d'un utilisateur sur un serveur de ressources (resource server), sans exposer les informations d'identification de l'utilisateur à l'application cliente.
+	* *Authorization Server* (AS) : C'est le composant central d'OAuth 2.0. Il est responsable de l'émission des tokens d'accès et d'actualisation, et de la validation des demandes d'autorisation. Il ne se préoccupe pas de l'authentification de l'utilisateur en tant que telle.
+
+*OIDC* :
+
+	* *Extension d'OAuth 2.0* : OpenID Connect (OIDC) est une couche d'identité construite sur OAuth 2.0. Il ajoute des fonctionnalités d'authentification à OAuth 2.0, permettant ainsi aux applications clientes de vérifier l'identité de l'utilisateur.
+	* *Identity Provider* (IdP) : Dans OIDC, l'Authorization Server est souvent appelé Identity Provider (IdP). Cela reflète le fait que l'IdP ne se contente pas d'autoriser l'accès aux ressources, mais il authentifie également l'utilisateur et fournit des informations sur son identité (claims) à l'application cliente.
+
+En résumé :
+
+	* OAuth 2.0 se concentre sur l'autorisation et utilise un Authorization Server (AS).
+	* OIDC étend OAuth 2.0 pour inclure l'authentification et introduit le concept d'Identity Provider (IdP).
 
