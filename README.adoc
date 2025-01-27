@@ -1,0 +1,6 @@
+= Ressources divers sur la tech
+
+Un repo pour stocker toutes mes ressources tech non taggées comme spécifiques à un domaine
+
+
+
