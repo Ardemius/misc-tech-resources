@@ -1,0 +1,89 @@
+= Ressources diverses sur la tech
+Thomas SCHWENDER <icon:github[] https://github.com/Ardemius/[GitHub] / icon:twitter[role="aqua"] https://twitter.com/thomasschwender[@thomasschwender]>
+// Handling GitHub admonition blocks icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+:imagesdir: ./images
+:resourcesdir: ./resources
+:source-highlighter: highlightjs
+:highlightjs-languages: asciidoc
+// We must enable experimental attribute to display Keyboard, button, and menu macros
+:experimental:
+// Next 2 ones are to handle line breaks in some particular elements (list, footnotes, etc.)
+:lb: pass:[<br> +]
+:sb: pass:[<br>]
+// check https://github.com/Ardemius/personal-wiki/wiki/AsciiDoctor-tips for tips on table of content in GitHub
+:toc: macro
+:toclevels: 4
+// To number the sections of the table of contents
+//:sectnums:
+// Add an anchor with hyperlink before the section title
+:sectanchors:
+// To turn off figure caption labels and numbers
+:figure-caption!:
+// Same for examples
+//:example-caption!:
+// To turn off ALL captions
+// :caption:
+
+toc::[]
+
+== OAuth 2.0
+
+=== Protocole ou framework ?
+
+-> *OAuth 2.0 est-il un framework ou un protocole ? Explique la différence entre les 2*
+
+.Gemini
+--
+OAuth 2.0 est un protocole, non un framework.
+
+* *Qu'est-ce qu'un protocole ?*
+
+	** Un protocole, en informatique, définit un *ensemble de règles et de conventions régissant la communication entre différents systèmes*. +
+	Il spécifie le format des messages, la séquence des opérations et les actions à entreprendre en réponse à certaines conditions. +
+	En d'autres termes, c'est un langage commun que les systèmes utilisent pour se "parler" entre eux.
+
+	** Exemple : Le *protocole HTTP* définit les règles pour la communication entre un navigateur web et un serveur web.
+
+* *Qu'est-ce qu'un framework ?*
+
+	** Un framework, quant à lui, est une *structure de base réutilisable qui fournit une abstraction de certaines fonctionnalités communes d'une application*. +
+	Il offre un ensemble d'outils, de bibliothèques et de conventions pour accélérer le développement d'applications. +
+	Un framework ne se soucie pas de la communication entre les systèmes, mais plutôt de *la manière dont une application est construite à l'intérieur*.
+
+	** Exemple : Le *framework Django* pour Python fournit un ensemble d'outils pour développer des applications web rapidement, en s'occupant de la gestion des URL, du modèle-vue-contrôleur, de la base de données, etc.
+
+* *Pourquoi OAuth 2.0 est un protocole ?*
+
+	** OAuth 2.0 définit un ensemble de règles précises pour l'autorisation d'accès à des ressources. Il spécifie comment une application peut demander à un utilisateur l'autorisation d'accéder à ses données sur un autre service (comme Google ou Facebook). Ces règles sont indépendantes de toute technologie particulière, et peuvent être implémentées dans n'importe quel langage de programmation.
+
+En résumé :
+
+	* OAuth 2.0 est un protocole qui définit comment les applications peuvent s'authentifier les unes les autres.
+	* Un framework fournit un ensemble d'outils pour construire des applications.
+
+Pour mieux comprendre la différence, imaginez que vous construisez une maison:
+
+	* *Le protocole serait l'ensemble des normes de construction* (dimensions des briques, normes électriques, etc.). Il définit comment les différents éléments de la maison doivent être assemblés.
+	* *Le framework serait un ensemble d'outils et de matériaux pré-fabriqués* (kits de cuisine, planchers préfabriqués, etc.) qui vous permettent de construire la maison plus rapidement.
+
+IMPORTANT: -> En conclusion, OAuth 2.0 est un *protocole qui établit les règles de l'autorisation*, tandis qu'un *framework vous aide à mettre en œuvre ces règles dans une application spécifique*.
+--
+
+=== Details du protocole
+
+* Voir l'excellent article https://blog.bytebytego.com/i/155600813/oauth-explained-with-simple-terms de ByteByteGo (Alex XU)
+
+image:20250127_ByteByteGo_OAuth-2.0_01.jpg[]
+
+
+
