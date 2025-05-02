@@ -36,9 +36,18 @@ endif::[]
 
 toc::[]
 
-== OAuth 2.0 et OpenID Connect (OIDC)
+== ARCHITECTURE
 
-=== OAuth 2.0 : protocole ou framework ?
+* 2025/03/29 - ByteByteGo EP156 : Software Architect roadmap +
+https://blog.bytebytego.com/p/ep156-software-architect-knowledge
+
+image:20250329_bytebytego_software-architect-roadmap.jpg[]
+
+== CONCEPTS ET TECHNOLOGIES
+
+=== OAuth 2.0 et OpenID Connect (OIDC)
+
+==== OAuth 2.0 : protocole ou framework ?
 
 -> *OAuth 2.0 est-il un framework ou un protocole ? Explique la différence entre les 2*
 
@@ -79,13 +88,13 @@ Pour mieux comprendre la différence, imaginez que vous construisez une maison:
 IMPORTANT: -> En conclusion, OAuth 2.0 est un *protocole qui établit les règles de l'autorisation*, tandis qu'un *framework vous aide à mettre en œuvre ces règles dans une application spécifique*.
 --
 
-=== Details du protocole
+==== Details du protocole
 
 * Voir l'excellent article https://blog.bytebytego.com/i/155600813/oauth-explained-with-simple-terms de ByteByteGo (Alex XU)
 
 image:20250127_ByteByteGo_OAuth-2.0_01.jpg[]
 
-=== Différences entre OAuth 2.0 et OIDC
+==== Différences entre OAuth 2.0 et OIDC
 
 .Attention aux éléments de langage empruntés à OIDC et qui complique la compréhension...
 [NOTE]
@@ -111,4 +120,51 @@ En résumé :
 
 	* OAuth 2.0 se concentre sur l'autorisation et utilise un Authorization Server (AS).
 	* OIDC étend OAuth 2.0 pour inclure l'authentification et introduit le concept d'Identity Provider (IdP).
+
+=== Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram
+
+* Super article de ByteByteGo : https://blog.bytebytego.com/i/155600813/session-cookie-jwt-token-sso-and-oauth-explained-in-one-diagram
+
+image:20250127_ByteByteGo_Session-JWT-token-SSO-Auth-2.0_01.jpg[]
+
+When you login to a website, your identity needs to be managed. Here is how different solutions work :
+
+	* *Session* : The server stores your identity and gives the browser a session ID cookie. This allows the server to track login state. But cookies don't work well across devices.
+	* *Token* : Your identity is encoded into a token sent to the browser. The browser sends this token on future requests for authentication. No server session storage is required. But tokens need encryption/decryption.
+	* *JWT* : JSON Web Tokens standardize identity tokens using digital signatures for trust. The signature is contained in the token so no server session is needed.
+	* *SSO* : Single Sign On uses a central authentication service. This allows a single login to work across multiple sites.
+	* *OAuth2* : Allows limited access to your data on one site by another site, without giving away passwords.
+	* *QR Code* : Encodes a random token into a QR code for mobile login. Scanning the code logs you in without typing a password.
+
+==== JWT 101: Key to Stateless Authentication
+
+* De nouveau très bon schéma de ByteByteGo : https://blog.bytebytego.com/p/ep149-jwt-101-key-to-stateless-authentication
+
+image:20250211_ByteByteGo_JWT-101.jpg[]
+
+== VEILLE TECHNOLOGIQUE & INFOS DIVERSES
+
+=== ARTICLES
+
+==== 2025/03/13 - ByteByteGo : API Protocols 101: A Guide to Choose the Right One
+
+* URL de l'article : https://blog.bytebytego.com/p/api-protocols-101-a-guide-to-choose
+
+image:20250313_ByteByteGo_API-Protocols-101_01.jpg[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
