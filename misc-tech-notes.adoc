@@ -43,7 +43,35 @@ https://blog.bytebytego.com/p/ep156-software-architect-knowledge
 
 image:20250329_bytebytego_software-architect-roadmap.jpg[]
 
+=== SOLID principle
+
+* ByteByteGo "What is the SOLID Principle?" : https://blog.bytebytego.com/p/ep175-what-is-the-solid-principle +
+image:20250809_ByteByteGo_SOLID-principle_01.jpg[]
+
+The SOLID acronym stands for:
+
+	* S -> *Single Responsibility Principle*
+		** The Single Responsibility Principle (SRP) states that a class should have only one reason to change. In other words, it should have a single, well-defined responsibility or task within a software system.
+	* O -> *Open/Closed Principle*
+		** The Open/Closed Principle (OCP) states that software entities, such as classes, should be open for extension but closed for modification. This means you can add new functionality without altering existing code.
+	* L -> *Liskov Substitution Principle*
+		** The Liskov Substitution Principle (LSP) states that objects of a derived class should be able to replace objects of the base class without affecting the correctness of the program.
+	* I -> *Interface Segregation Principle*
+		** The Interface Segregation Principle (ISP) emphasizes that classes or components that use interfaces should not be forced to depend on interfaces they don't use.
+	* D -> *Dependency Inversion Principle*
+		** The Dependency Inversion Principle (DIP) states that high-level modules (or classes) should not depend on low-level modules; both should depend on abstractions, such as interfaces.
+
 == CONCEPTS ET TECHNOLOGIES
+
+=== API Gateway vs Service Mesh
+
+* URL d'un très bon article de ByteByteGo : https://blog.bytebytego.com/p/api-gateway-vs-service-mesh-which
+
+.Overview : API Gateway - Service Mesh
+image:20250522_ByteByteGo_API-Gateway-vs-Service-Mesh_01.jpg[]
+
+.Securing the backend with API Gateways (implique API keys, JWTs, OAuth2)
+image:20250522_ByteByteGo_API-Gateway-vs-Service-Mesh_02.jpg[]
 
 === OAuth 2.0 et OpenID Connect (OIDC)
 
@@ -121,6 +149,22 @@ En résumé :
 	* OAuth 2.0 se concentre sur l'autorisation et utilise un Authorization Server (AS).
 	* OIDC étend OAuth 2.0 pour inclure l'authentification et introduit le concept d'Identity Provider (IdP).
 
+=== Pyramide des tests
+
+* URL de l'article ByteByteGo (2025/08/30) : https://blog.bytebytego.com/i/172292074/the-testing-pyramid
+
+image:20250830_ByteByteGo_pyramide-tests_01.jpg[]
+
+Testing is the backbone of reliable software. The Testing Pyramid is a widely accepted strategy for structuring tests into three key layers:
+
+	* *Unit Tests* : These are the foundation of the pyramid. Unit tests are fast, isolated, and low-cost to write and maintain. They test individual functions, methods, or components.
+
+	* *Integration Tests* : These tests validate interactions between components, such as APIs, databases, and external services. They are slower than unit tests and require more setup.
+
+	* *E2E Tests* : These simulate real user flows from start to finish across the full system. They are expensive to write and maintain and tend to be slow to execute.
+
+-> As you go up the pyramid, the cost of test development, execution, and maintenance increases.
+
 === Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram
 
 * Super article de ByteByteGo : https://blog.bytebytego.com/i/155600813/session-cookie-jwt-token-sso-and-oauth-explained-in-one-diagram
@@ -151,6 +195,7 @@ image:20250211_ByteByteGo_JWT-101.jpg[]
 * URL de l'article : https://blog.bytebytego.com/p/api-protocols-101-a-guide-to-choose
 
 image:20250313_ByteByteGo_API-Protocols-101_01.jpg[]
+
 
 
 
