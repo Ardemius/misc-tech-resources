@@ -61,6 +61,29 @@ The SOLID acronym stands for:
 	* D -> *Dependency Inversion Principle*
 		** The Dependency Inversion Principle (DIP) states that high-level modules (or classes) should not depend on low-level modules; both should depend on abstractions, such as interfaces.
 
+=== Architecture microservices
+
+* 2025/10/16 - ByteByteGo "Components of a Production-Ready Microservice Architecture" : https://blog.bytebytego.com/p/a-guide-to-microservices-architecture +
+image:20251105_ByteByteGo_microservices_01.jpg[]
+
+	1. *API Gateway*: As mentioned, the API Gateway acts as the front door to the system. It receives all client requests and routes them to the correct microservices. It can also filter requests, enforce security rules, and perform load balancing to spread traffic evenly across service instances.
+
+	2. *Service Registry*: In a microservices environment, services often scale up or down dynamically. A service registry keeps track of available service instances and their locations. This allows other services or the gateway to discover them without relying on hardcoded addresses.
+
+	3. *Service Layer*: This is where the actual business logic resides. Each service is built to handle a specific domain, such as orders, payments, or notifications. Frameworks make it easier to develop scalable services with built-in support for REST APIs, dependency injection, and testing.
+
+	4. *Authorization Server*: Security is critical in distributed systems. An Authorization Server handles authentication and access control across all services. Instead of each service managing credentials, the server issues tokens that validate user identity and permissions.
+
+	5. *Data Storage*: Each service typically manages its own database, which may be relational (PostgreSQL, MySQL) or non-relational (MongoDB, Cassandra). This separation reduces coupling and enables polyglot persistence, where teams choose the database that best fits their service’s requirements.
+
+	6. *Distributed Caching*: Caching improves performance by storing frequently accessed data in memory. Distributed caches can be shared across multiple service instances, reducing database load and speeding up response times.
+
+	7. *Asynchronous Communication*: Synchronous calls like REST are simple, but they create dependencies. Asynchronous communication allows services to exchange information without waiting for immediate responses.
+
+	8. *Metrics and Monitoring*: Observability is key to managing microservices. Services should publish metrics about their performance, error rates, and resource usage. Tools like Prometheus collect these metrics, while Grafana visualizes them in dashboards, enabling teams to detect issues quickly.
+
+	9. *Centralized Logging*: Logs are essential for debugging, but in microservices, they are spread across many services. Centralized logging pipelines collect, store, and analyze logs in one place. A common setup is the ELK stack: Logstash to collect, Elasticsearch to store, and Kibana to visualize.
+
 == CONCEPTS ET TECHNOLOGIES
 
 === API Gateway vs Service Mesh
@@ -72,6 +95,15 @@ image:20250522_ByteByteGo_API-Gateway-vs-Service-Mesh_01.jpg[]
 
 .Securing the backend with API Gateways (implique API keys, JWTs, OAuth2)
 image:20250522_ByteByteGo_API-Gateway-vs-Service-Mesh_02.jpg[]
+
+=== Java : fonctionnement
+
+image:20250924_java-fonctionnement_01.png[]
+
+1. Java source code (.java) is compiled into .class bytecode using javac.
+2. The Class Loader loads bytecode into the Java Runtime Environment (JVM).
+3. Bytecode is verified and executed.
+4. JVM uses both an Interpreter and a JIT Compiler, frequently used code (hot paths) is converted into native machine code, making Java faster.
 
 === OAuth 2.0 et OpenID Connect (OIDC)
 
